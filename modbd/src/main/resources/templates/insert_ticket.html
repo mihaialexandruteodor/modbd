@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>New Ticket</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body style="text-align:center;">
+    <form  th:action="@{'/saveTicket'}"  th:object="${ticket}"  method="POST">
+
+        <h2>Date ticket issued</h2>
+        <input class="center" type="date" th:field="*{date_ticket_issued}" >
+        <br/>
+        <br/>
+
+        <h2>Date ticket finished</h2>
+        <input class="center" type="date" th:field="*{date_ticket_finished}" >
+        <br/>
+        <br/>
+
+        <h2>Id vehicle</h2>
+        <input class="center" type="number" th:field="*{id_vehicle}" >
+        <br/>
+        <br/>
+
+        <h2>Id ticket type</h2>
+        <input class="center" type="number" th:field="*{id_ticket_type}" >
+        <br/>
+        <br/>
+
+        <h2>Id ticket status</h2>
+        <input class="center" type="number" th:field="*{id_ticket_status}" >
+        <br/>
+        <br/>
+
+        <h2>Id zone</h2>
+        <input class="center" type="number" th:field="*{id_zone}" >
+        <br/>
+        <br/>
+
+        <h2>Price</h2>
+        <input class="center" type="number" th:field="*{price}" >
+        <br/>
+        <br/>
+
+        <button type="submit" class="button-78">Save Ticket</button>
+    </form>
+</body>
+</html>
