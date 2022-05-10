@@ -9,7 +9,7 @@ public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_ticket;
+    private int idticket;
 
     @Column(name = "date_ticket_issued")
     private Date date_ticket_issued;
@@ -32,12 +32,12 @@ public class Ticket {
     @Column(name = "price")
     private Integer price;
 
-    public int getId_ticket() {
-        return id_ticket;
+    public int getIdticket() {
+        return idticket;
     }
 
-    public void setId_ticket(int id_ticket) {
-        this.id_ticket = id_ticket;
+    public void setIdticket(int idticket) {
+        this.idticket = idticket;
     }
 
     public Date getDate_ticket_issued() {

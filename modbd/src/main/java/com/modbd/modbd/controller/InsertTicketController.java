@@ -27,31 +27,23 @@ public class InsertTicketController {
     }
 
     @PostMapping("/saveTicket")
-    public String saveTicket(@ModelAttribute("ticket") Ticket ticket, Model model) {
+    public String saveTicket(@ModelAttribute("ticket") Ticket ticket) {
         ticketService.saveTicket(ticket);
         return "index";
     }
 
-    @GetMapping("/cp/page/{pageNo}")
-    public String findPaginated( @PathVariable(value = "pageNo") int pageNo,
-                                 @RequestParam("sortField") String sortField,
-                                 @RequestParam("sortDir") String sortDir,
-                                ModelAndView model) {
-        int pageSize = 6;
+    @GetMapping("/updateTicket/{id}")
+    public String updateTicket(@PathVariable ( value = "id") int id, Model model) {
 
-        Page<Ticket> page = ticketService.findPaginated(pageNo, pageSize, sortField, sortDir);
-        List<Ticket> listTickets = page.getContent();
-
-        model.addObject("currentPage", pageNo);
-        model.addObject("totalPages", page.getTotalPages());
-        model.addObject("totalItems", page.getTotalElements());
-
-        model.addObject("sortField", sortField);
-        model.addObject("sortDir", sortDir);
-        model.addObject("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
-
-        model.addObject("listTickets", listTickets);
-
-        return "index";
+        Ticket ticket = ticketService.getTicketById(id);
+        model.addAttribute("ticket",ticket);
+        return "update_ticket";
     }
+
+    @GetMapping("/deleteTicket/{id}")
+    public String deleteCharacterProfile(@PathVariable (value = "id") int id) {
+        ticketService.deleteTicketById(id);
+        return "redirect:/viewTickets";
+    }
+
 }

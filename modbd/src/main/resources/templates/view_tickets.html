@@ -1,10 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Tickets</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
 </head>
 <body>
 
+<table border="1" class = "table table-striped table-responsive-md" style="text-align:center;">
+    <thead>
+    <tr style="text-align:center;">
+        <th>
+            <a>Date ticket issued</a>
+        </th>
+        <th>
+            <a>Date ticket finished</a>
+        </th>
+        <th>
+            <a>Id vehicle</a>
+        </th>
+        <th>
+            <a>Id ticket type</a>
+        </th>
+        <th>
+            <a>Id ticket status</a>
+        </th>
+        <th>
+            <a>Id zone</a>
+        </th>
+        <th>
+            <a>Price</a>
+        </th>
+        <th> Actions </th>
+    </tr>
+    </thead>
+    <tbody style="text-align:center;">
+    <tr th:each="ticket : ${listTickets}">
+        <td th:text="${ticket.date_ticket_issued}"></td>
+        <td th:text="${ticket.date_ticket_finished}"></td>
+        <td th:text="${ticket.id_vehicle}"></td>
+        <td th:text="${ticket.id_ticket_type}"></td>
+        <td th:text="${ticket.id_ticket_status}"></td>
+        <td th:text="${ticket.id_zone}"></td>
+        <td th:text="${ticket.price}"></td>
+        <td> <a th:href="@{/updateTicket/{id}(id=${ticket.idticket})}" class="btn btn-primary">Update</a>
+            <a th:href="@{/deleteTicket/{id}(id=${ticket.idticket})}" class="btn btn-danger">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div style="text-align:center;">
+    <a class="btn btn-primary" th:href = "@{/}">Back to Main Page</a>
+</div>
 </body>
 </html>
