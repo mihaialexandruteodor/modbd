@@ -12,37 +12,37 @@
     <form  th:action="@{'/saveTicket'}"  th:object="${ticket}"  method="POST">
 
         <h2>Date ticket issued</h2>
-        <input class="center" type="date" th:field="*{date_ticket_issued}" >
+        <input  type="date" th:field="*{date_ticket_issued}" >
         <br/>
         <br/>
 
         <h2>Date ticket finished</h2>
-        <input class="center" type="date" th:field="*{date_ticket_finished}" >
+        <input  type="date" th:field="*{date_ticket_finished}" >
         <br/>
         <br/>
 
         <h2>Id vehicle</h2>
-        <input class="center" type="number" th:field="*{id_vehicle}" >
+        <input  type="number" th:field="*{id_vehicle}" >
         <br/>
         <br/>
 
         <h2>Id ticket type</h2>
-        <input class="center" type="number" th:field="*{id_ticket_type}" >
+        <input  type="number" th:field="*{id_ticket_type}" >
         <br/>
         <br/>
 
         <h2>Id ticket status</h2>
-        <input class="center" type="number" th:field="*{id_ticket_status}" >
+        <input  type="number" th:field="*{id_ticket_status}" >
         <br/>
         <br/>
 
         <h2>Id zone</h2>
-        <input class="center" type="number" th:field="*{id_zone}" >
+        <input  type="number" th:field="*{id_zone}" >
         <br/>
         <br/>
 
         <h2>Price</h2>
-        <input class="center" type="number" th:field="*{price}" >
+        <input  type="number" th:field="*{price}" >
         <br/>
         <br/>
 
