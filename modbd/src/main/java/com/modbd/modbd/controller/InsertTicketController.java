@@ -2,7 +2,9 @@ package com.modbd.modbd.controller;
 
 
 import com.modbd.modbd.model.Ticket;
+import com.modbd.modbd.model.TicketType;
 import com.modbd.modbd.service.TicketService;
+import com.modbd.modbd.service.TicketTypeService;
 import com.modbd.modbd.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -22,13 +24,18 @@ public class InsertTicketController {
     @Autowired
     private VehicleService vehicleService;
 
+    @Autowired
+    private TicketTypeService ticketTypeService;
+
     @GetMapping("/newTicket")
     public String newTicket(Model model)
     {
         Ticket ticket = new Ticket();
         List<Integer> vehicleids = vehicleService.getAllVehicleIds();
+        List<TicketType> tickettypes = ticketTypeService.getAllTicketTypes();
         model.addAttribute("ticket",ticket);
         model.addAttribute("vehicleids",vehicleids);
+        model.addAttribute("tickettypes",tickettypes);
         return "insert_ticket";
     }
 
@@ -42,7 +49,11 @@ public class InsertTicketController {
     public String updateTicket(@PathVariable ( value = "id") int id, Model model) {
 
         Ticket ticket = ticketService.getTicketById(id);
+        List<Integer> vehicleids = vehicleService.getAllVehicleIds();
+        List<TicketType> tickettypes = ticketTypeService.getAllTicketTypes();
         model.addAttribute("ticket",ticket);
+        model.addAttribute("vehicleids",vehicleids);
+        model.addAttribute("tickettypes",tickettypes);
         return "update_ticket";
     }
 

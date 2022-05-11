@@ -36,7 +36,7 @@
         <div class="form-group blu-margin">
             <select class="form-control" style="width: 7em; display: block; margin: 0 auto;" th:field="*{id_ticket_type}">
                 <option value="0">select ticket type</option>
-                <!--option th:each="type : ${tichettypes}" th:value="${type}" th:text="${type}"></option-->
+                <option th:each="type : ${tickettypes}" th:value="${type.id_tichet_type}" th:text="${type.type_name}"></option>
             </select>
         </div>
         <br/>
