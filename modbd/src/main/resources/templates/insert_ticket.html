@@ -14,12 +14,12 @@
         <br/>
 
         <h2>Date ticket issued</h2>
-        <input  type="date" th:field="*{date_ticket_issued}" >
+        <input  type="date" th:field="*{date_ticket_issued}">
         <br/>
         <br/>
 
         <h2>Date ticket finished</h2>
-        <input  type="date" th:field="*{date_ticket_finished}" >
+        <input  type="date" th:field="*{date_ticket_finished}">
         <br/>
         <br/>
 
@@ -45,7 +45,7 @@
         <div class="form-group blu-margin">
             <select class="form-control" style="width: 7em; display: block; margin: 0 auto;" th:field="*{id_ticket_status}">
                 <option value="0">select ticket status</option>
-                <!--option th:each="status : ${tichetstatus}" th:value="${status}" th:text="${status}"></option-->
+                <option th:each="status : ${ticketstatuses}" th:value="${status.id_ticket_status}" th:text="${status.ticket_status_name}"></option>
             </select>
         </div>
         <br/>

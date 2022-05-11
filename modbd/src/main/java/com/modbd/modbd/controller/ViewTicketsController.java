@@ -2,6 +2,9 @@ package com.modbd.modbd.controller;
 
 import com.modbd.modbd.model.Ticket;
 import com.modbd.modbd.service.TicketService;
+import com.modbd.modbd.service.TicketStatusService;
+import com.modbd.modbd.service.TicketTypeService;
+import com.modbd.modbd.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -18,6 +21,15 @@ public class ViewTicketsController {
 
     @Autowired
     private TicketService ticketService;
+
+    @Autowired
+    private VehicleService vehicleService;
+
+    @Autowired
+    private TicketTypeService ticketTypeService;
+
+    @Autowired
+    private TicketStatusService ticketStatusService;
 
     @GetMapping("/viewTickets")
     public ModelAndView viewTickets()
