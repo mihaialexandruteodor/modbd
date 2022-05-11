@@ -11,6 +11,8 @@
 <body style="text-align:center;">
     <form  th:action="@{'/saveTicket'}"  th:object="${ticket}"  method="POST">
 
+        <br/>
+
         <h2>Date ticket issued</h2>
         <input  type="date" th:field="*{date_ticket_issued}" >
         <br/>
@@ -22,23 +24,39 @@
         <br/>
 
         <h2>Id vehicle</h2>
-        <input  type="number" th:field="*{id_vehicle}" >
-        <br/>
+        <div class="form-group blu-margin">
+            <select class="form-control" style="width: 7em; display: block; margin: 0 auto;" th:field="*{id_vehicle}">
+                <option value="0">select id</option>
+                <option th:each="id : ${vehicleids}" th:value="${id}" th:text="${id}"></option>
+            </select>
+        </div>
         <br/>
 
         <h2>Id ticket type</h2>
-        <input  type="number" th:field="*{id_ticket_type}" >
-        <br/>
+        <div class="form-group blu-margin">
+            <select class="form-control" style="width: 7em; display: block; margin: 0 auto;" th:field="*{id_ticket_type}">
+                <option value="0">select ticket type</option>
+                <!--option th:each="type : ${tichettypes}" th:value="${type}" th:text="${type}"></option-->
+            </select>
+        </div>
         <br/>
 
         <h2>Id ticket status</h2>
-        <input  type="number" th:field="*{id_ticket_status}" >
-        <br/>
+        <div class="form-group blu-margin">
+            <select class="form-control" style="width: 7em; display: block; margin: 0 auto;" th:field="*{id_ticket_status}">
+                <option value="0">select ticket status</option>
+                <!--option th:each="status : ${tichetstatus}" th:value="${status}" th:text="${status}"></option-->
+            </select>
+        </div>
         <br/>
 
         <h2>Id zone</h2>
-        <input  type="number" th:field="*{id_zone}" >
-        <br/>
+        <div class="form-group blu-margin">
+            <select class="form-control" style="width: 7em; display: block; margin: 0 auto;" th:field="*{id_zone}">
+                <option value="0">select zone id</option>
+                <!--option th:each="zone : ${zones}" th:value="${zone}" th:text="${zone}"></option-->
+            </select>
+        </div>
         <br/>
 
         <h2>Price</h2>

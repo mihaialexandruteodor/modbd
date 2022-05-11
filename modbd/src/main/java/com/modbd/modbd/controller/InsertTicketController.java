@@ -3,6 +3,7 @@ package com.modbd.modbd.controller;
 
 import com.modbd.modbd.model.Ticket;
 import com.modbd.modbd.service.TicketService;
+import com.modbd.modbd.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -18,11 +19,16 @@ public class InsertTicketController {
     @Autowired
     private TicketService ticketService;
 
+    @Autowired
+    private VehicleService vehicleService;
+
     @GetMapping("/newTicket")
     public String newTicket(Model model)
     {
         Ticket ticket = new Ticket();
+        List<Integer> vehicleids = vehicleService.getAllVehicleIds();
         model.addAttribute("ticket",ticket);
+        model.addAttribute("vehicleids",vehicleids);
         return "insert_ticket";
     }
 
