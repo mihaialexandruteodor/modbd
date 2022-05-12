@@ -11,7 +11,7 @@
 <body style="text-align:center;">
     <form  th:action="@{'/saveTicket'}"  th:object="${ticket}"  method="POST">
 
-        <input type="hidden" th:field="*{id_ticket}" />
+        <input type="hidden" th:field="*{idticket}" />
 
         <h2>Date ticket issued</h2>
         <input  type="date" th:field="*{date_ticket_issued}">
