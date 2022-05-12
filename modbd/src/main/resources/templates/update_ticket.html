@@ -54,7 +54,7 @@
         <div class="form-group blu-margin">
             <select class="form-control" style="width: 7em; display: block; margin: 0 auto;" th:field="*{id_zone}">
                 <option value="0">select zone id</option>
-                <!--option th:each="zone : ${zones}" th:value="${zone}" th:text="${zone}"></option-->
+                <option th:each="zone : ${zones}" th:value="${zone.id_zone}" th:text="${zone.zone_name}"></option>
             </select>
         </div>
         <br/>

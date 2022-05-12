@@ -4,10 +4,8 @@ package com.modbd.modbd.controller;
 import com.modbd.modbd.model.Ticket;
 import com.modbd.modbd.model.TicketStatus;
 import com.modbd.modbd.model.TicketType;
-import com.modbd.modbd.service.TicketService;
-import com.modbd.modbd.service.TicketStatusService;
-import com.modbd.modbd.service.TicketTypeService;
-import com.modbd.modbd.service.VehicleService;
+import com.modbd.modbd.model.Zone;
+import com.modbd.modbd.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -33,6 +31,9 @@ public class InsertTicketController {
     @Autowired
     private TicketStatusService ticketStatusService;
 
+    @Autowired
+    private ZoneService zoneService;
+
     @GetMapping("/newTicket")
     public String newTicket(Model model)
     {
@@ -42,10 +43,12 @@ public class InsertTicketController {
         List<Integer> vehicleids = vehicleService.getAllVehicleIds();
         List<TicketType> tickettypes = ticketTypeService.getAllTicketTypes();
         List<TicketStatus> ticketstatuses = ticketStatusService.getAllTicketStatuses();
+        List<Zone> zones = zoneService.getAllZones();
         model.addAttribute("ticket",ticket);
         model.addAttribute("vehicleids",vehicleids);
         model.addAttribute("tickettypes",tickettypes);
         model.addAttribute("ticketstatuses",ticketstatuses);
+        model.addAttribute("zones",zones);
         return "insert_ticket";
     }
 
@@ -62,10 +65,12 @@ public class InsertTicketController {
         List<Integer> vehicleids = vehicleService.getAllVehicleIds();
         List<TicketType> tickettypes = ticketTypeService.getAllTicketTypes();
         List<TicketStatus> ticketstatuses = ticketStatusService.getAllTicketStatuses();
+        List<Zone> zones = zoneService.getAllZones();
         model.addAttribute("ticket",ticket);
         model.addAttribute("vehicleids",vehicleids);
         model.addAttribute("tickettypes",tickettypes);
         model.addAttribute("ticketstatuses",ticketstatuses);
+        model.addAttribute("zones",zones);
         return "update_ticket";
     }
 
