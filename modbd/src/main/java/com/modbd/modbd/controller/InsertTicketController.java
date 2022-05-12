@@ -55,7 +55,7 @@ public class InsertTicketController {
     @PostMapping("/saveTicket")
     public String saveTicket(@ModelAttribute("ticket") Ticket ticket) {
         ticketService.saveTicket(ticket);
-        return "index";
+        return "redirect:/viewTickets";
     }
 
     @GetMapping("/updateTicket/{id}")
