@@ -23,11 +23,11 @@
         <br/>
         <br/>
 
-        <h2>Id vehicle</h2>
+        <h2>Vehicle plate</h2>
         <div class="form-group blu-margin">
             <select class="form-control" style="width: 7em; display: block; margin: 0 auto;" th:field="*{id_vehicle}">
-                <option value="0">select id</option>
-                <option th:each="id : ${vehicleids}" th:value="${id}" th:text="${id}"></option>
+                <option value="0">select vehicle plate</option>
+                <option th:each="vehicle : ${vehicles}" th:value="${vehicle.id_vehicle}" th:text="${vehicle.vehicle_plate}"></option>
             </select>
         </div>
         <br/>

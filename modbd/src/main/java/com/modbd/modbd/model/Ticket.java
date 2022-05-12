@@ -9,6 +9,7 @@ public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idticket")
     private int idticket;
 
     @Column(name = "date_ticket_issued")

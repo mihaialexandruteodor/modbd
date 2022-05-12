@@ -1,5 +1,6 @@
 package com.modbd.modbd.service;
 
+import com.modbd.modbd.model.Vehicle;
 import com.modbd.modbd.repository.VehiclesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ public class VehicleServiceImpl implements VehicleService{
     private VehiclesRepository vehiclesRepository;
 
     @Override
-    public List<Integer> getAllVehicleIds() {
-        return vehiclesRepository.getAllVehicleIds();
+    public List<Vehicle> getAllVehicles() {
+        return vehiclesRepository.findAll();
     }
 }
