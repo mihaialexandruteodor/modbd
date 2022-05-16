@@ -1,5 +1,7 @@
 package com.modbd.modbd.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.sql.Date;
 
@@ -8,9 +10,10 @@ import java.sql.Date;
 public class Ticket {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idticket")
-    private int idticket;
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_ticket")
+    private int id_ticket;
+
 
     @Column(name = "date_ticket_issued")
     private Date date_ticket_issued;
@@ -33,12 +36,12 @@ public class Ticket {
     @Column(name = "price")
     private Integer price;
 
-    public int getIdticket() {
-        return idticket;
+    public int getId_ticket() {
+        return id_ticket;
     }
 
-    public void setIdticket(int idticket) {
-        this.idticket = idticket;
+    public void setId_ticket(int id_ticket) {
+        this.id_ticket = id_ticket;
     }
 
     public Date getDate_ticket_issued() {

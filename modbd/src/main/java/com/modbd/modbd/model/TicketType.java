@@ -10,8 +10,8 @@ import javax.persistence.Table;
 public class TicketType {
 
     @Id
-    @Column(name = "id_tichet_type")
-    private Integer id_tichet_type;
+    @Column(name = "id_ticket_type")
+    private Integer id_ticket_type;
 
     @Column(name = "type_name")
     private String type_name;
@@ -19,12 +19,12 @@ public class TicketType {
     @Column(name = "type_tariff")
     private Integer type_tariff;
 
-    public Integer getId_tichet_type() {
-        return id_tichet_type;
+    public Integer getId_ticket_type() {
+        return id_ticket_type;
     }
 
-    public void setId_tichet_type(Integer id_tichet_type) {
-        this.id_tichet_type = id_tichet_type;
+    public void setId_ticket_type(Integer id_tichet_type) {
+        this.id_ticket_type = id_tichet_type;
     }
 
     public String getType_name() {

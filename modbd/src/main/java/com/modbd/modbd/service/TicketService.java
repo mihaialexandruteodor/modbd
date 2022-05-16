@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface TicketService {
     List<Ticket> getAllParkingTickets();
+    int getLastIdVal();
     void saveTicket(Ticket ticket);
     Ticket getTicketById(Integer id);
     void deleteTicketById(Integer id);

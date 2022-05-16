@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface TicketTypeRepository extends JpaRepository<TicketType, Integer> {
 
-    @Query(value = "SELECT type_name FROM ticket_types", nativeQuery = true)
-    List<String> getAllTicketTypes();
+
+
 }

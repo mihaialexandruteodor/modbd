@@ -23,10 +23,10 @@
         <br/>
         <br/>
 
-        <h2>Vehicle plate</h2>
+        <h2>Vehicle Plate</h2>
         <div class="form-group blu-margin">
             <select class="form-control" style="width: 7em; display: block; margin: 0 auto;" th:field="*{id_vehicle}">
-                <option value="0">select vehicle plate</option>
+                <option value="0">select Vehicle Plate</option>
                 <option th:each="vehicle : ${vehicles}" th:value="${vehicle.id_vehicle}" th:text="${vehicle.vehicle_plate}"></option>
             </select>
         </div>
@@ -36,7 +36,7 @@
         <div class="form-group blu-margin">
             <select class="form-control" style="width: 7em; display: block; margin: 0 auto;" th:field="*{id_ticket_type}">
                 <option value="0">select ticket type</option>
-                <option th:each="type : ${tickettypes}" th:value="${type.id_tichet_type}" th:text="${type.type_name}"></option>
+                <option th:each="type : ${tickettypes}" th:value="${type.id_ticket_type}" th:text="${type.type_name}"></option>
             </select>
         </div>
         <br/>
@@ -57,11 +57,6 @@
                 <option th:each="zone : ${zones}" th:value="${zone.id_zone}" th:text="${zone.zone_name}"></option>
             </select>
         </div>
-        <br/>
-
-        <h2>Price</h2>
-        <input  type="number" th:field="*{price}" >
-        <br/>
         <br/>
 
         <button type="submit" class="button-78">Save Ticket</button>

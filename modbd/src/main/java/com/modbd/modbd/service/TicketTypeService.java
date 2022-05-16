@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface TicketTypeService {
     List<TicketType> getAllTicketTypes();
-    List<String> getAllTicketTypesNames();
+
 }

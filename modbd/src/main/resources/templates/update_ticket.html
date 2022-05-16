@@ -9,9 +9,11 @@
           crossorigin="anonymous">
 </head>
 <body style="text-align:center;">
-    <form  th:action="@{'/saveTicket'}"  th:object="${ticket}"  method="POST">
+    <form  th:action="@{'/UpdateTicketValue'}"  th:object="${ticket}"  method="POST">
 
-        <input type="hidden" th:field="*{idticket}" />
+        <input type="hidden" th:field="*{id_ticket}" />
+
+
 
         <h2>Date ticket issued</h2>
         <input  type="date" th:field="*{date_ticket_issued}">
@@ -23,10 +25,10 @@
         <br/>
         <br/>
 
-        <h2>Vehicle plate</h2>
+        <h2>Vehicle Plate</h2>
         <div class="form-group blu-margin">
             <select class="form-control" style="width: 7em; display: block; margin: 0 auto;" th:field="*{id_vehicle}">
-                <option value="0">select vehicle plate</option>
+                <option value="0">select Vehicle Plate</option>
                 <option th:each="vehicle : ${vehicles}" th:value="${vehicle.id_vehicle}" th:text="${vehicle.vehicle_plate}"></option>
             </select>
         </div>
@@ -36,7 +38,7 @@
         <div class="form-group blu-margin">
             <select class="form-control" style="width: 7em; display: block; margin: 0 auto;" th:field="*{id_ticket_type}">
                 <option value="0">select ticket type</option>
-                <option th:each="type : ${tickettypes}" th:value="${type.id_tichet_type}" th:text="${type.type_name}"></option>
+                <option th:each="type : ${tickettypes}" th:value="${type.id_ticket_type}" th:text="${type.type_name}"></option>
             </select>
         </div>
         <br/>
@@ -59,10 +61,7 @@
         </div>
         <br/>
 
-        <h2>Price</h2>
-        <input  type="number" th:field="*{price}" >
-        <br/>
-        <br/>
+
 
         <button type="submit" class="button-78">Save Ticket</button>
     </form>

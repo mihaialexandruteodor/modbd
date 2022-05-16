@@ -34,7 +34,11 @@ public class ViewTicketsController {
     @GetMapping("/viewTickets")
     public ModelAndView viewTickets()
     {
-        return findPaginated(1, "idticket", "asc");
+        //return findPaginated(1, "id_ticket", "asc");
+        ModelAndView model = new ModelAndView("view_tickets");
+        List<Ticket> listTickets = ticketService.getAllParkingTickets();
+        model.addObject("listTickets", listTickets);
+        return model;
     }
 
     @GetMapping("/page/{pageNo}")

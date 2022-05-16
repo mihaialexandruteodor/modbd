@@ -23,6 +23,12 @@ public class TicketServiceImpl implements TicketService{
     }
 
     @Override
+    public int getLastIdVal() {
+        return ticketRepository.getLastIdVal();
+    }
+
+
+    @Override
     public void saveTicket(Ticket ticket) {
         ticketRepository.save(ticket);
     }

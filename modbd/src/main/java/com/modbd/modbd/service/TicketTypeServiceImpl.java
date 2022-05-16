@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TicketTypeServiceImpl implements TicketTypeService{
+public class TicketTypeServiceImpl implements TicketTypeService {
 
     @Autowired
     private TicketTypeRepository ticketTypeRepository;
@@ -18,8 +18,4 @@ public class TicketTypeServiceImpl implements TicketTypeService{
         return ticketTypeRepository.findAll();
     }
 
-    @Override
-    public List<String> getAllTicketTypesNames() {
-        return ticketTypeRepository.getAllTicketTypes();
-    }
 }
